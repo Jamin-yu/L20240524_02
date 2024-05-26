@@ -6,46 +6,46 @@ using namespace std;
 
 int main()
 {
-	//¹è¿­1
+	//ë°°ì—´1
 	int Size = 10;
 	int* A = new int[Size];
 
-	//1~10 ¼ıÀÚ ÇÒ´ç
+	//1~10 ìˆ«ì í• ë‹¹
 	for (int i = 0; i < Size; ++i)
 	{
 		A[i] = i + 1;
 	}
 
 
-	//¼ıÀÚ ÀÔ·Â
+	//ìˆ«ì ì…ë ¥
 	int Number = 0;
 	cin >> Number;
 
 
 	srand(time(0));
 
-	//¹è¿­Å©±â Áõ°¡ + ¼ıÀÚ Ãß°¡
+	//ë°°ì—´í¬ê¸° ì¦ê°€ + ìˆ«ì ì¶”ê°€
 	int newSize = Size + 1;
 	int* newA = new int[newSize];
 
-	//±âÁ¸¹è¿­ º¹»ç
+	//ê¸°ì¡´ë°°ì—´ ë³µì‚¬
 	for (int i = 0; i < Size; ++i)
 	{
 		newA[i] = A[i];
 	}
 
-	//**ÀÔ·Â ¼ıÀÚ ·£´ı À§Ä¡ »ğÀÔ
-	int index = rand() % newSize; // 0ºÎÅÍ newSize - 1 ±îÁö Áß ·£´ı
-	newA[newSize - 1] = newA[index];
+	//**ì…ë ¥ ìˆ«ì ëœë¤ ìœ„ì¹˜ ì‚½ì…
+	int index = rand() % newSize; // 0ë¶€í„° newSize - 1 ê¹Œì§€ ì¤‘ ëœë¤
+	newA[newSize] = newA[index];
 	newA[index] = Number;
 
 
-	//¹è¿­1 »èÁ¦, »õ ¹è¿­·Î ±³Ã¼
+	//ë°°ì—´1 ì‚­ì œ, ìƒˆ ë°°ì—´ë¡œ êµì²´
 	delete[] A;
 	A = newA;
 
 
-	//**¹è¿­ Ãâ·Â
+	//**ë°°ì—´ ì¶œë ¥
 	for (int i = 0; i < newSize; ++i)
 	{
 		cout << A[i] << " "; // " "???
@@ -53,7 +53,7 @@ int main()
 	cout << endl;
 
 
-	//¸Ş¸ğ¸® ÇØÁ¦
+	//ë©”ëª¨ë¦¬ í•´ì œ
 	delete[] A;
 
 	return 0;
